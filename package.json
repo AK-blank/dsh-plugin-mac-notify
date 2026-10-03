@@ -1,0 +1,60 @@
+{
+  "name": "dsh-plugin-mac-notify",
+  "version": "1.0.0",
+  "description": "macOS Notification Center alerts when a DSH session finishes or needs you — the banner carries the last reply, plays your system alert sound, and clicking it jumps back to the DSH page",
+  "icon": "./icon.svg",
+  "type": "module",
+  "license": "MIT",
+  "author": "AK-blank",
+  "homepage": "https://github.com/AK-blank/dsh-plugin-mac-notify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AK-blank/dsh-plugin-mac-notify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AK-blank/dsh-plugin-mac-notify/issues"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./click": "./lib/click.mjs",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "selftest.mjs",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "cordis",
+    "cordis-plugin",
+    "host-plugin",
+    "macos",
+    "notification",
+    "terminal-notifier",
+    "notify"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node selftest.mjs",
+    "selftest": "node selftest.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

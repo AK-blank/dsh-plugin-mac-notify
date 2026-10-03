@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "macOS notifications",
+    "description": "Send a macOS notification when a session finishes or the agent is waiting for your answer, approval, or a fix."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "macOS 系统通知",
+    "description": "会话结束、或 Agent 在等你回答／批准／排错时，发一条 macOS 系统通知。"
+  }
+}

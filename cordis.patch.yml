@@ -1,0 +1,24 @@
+# Bundle patch for dsh-plugin-mac-notify.
+#
+# A profile that lists this package in `dsh.profile.bundles` (which is what
+# `dsh plugin --profile <name> add <spec>` writes) applies this layer and gets
+# the plugin row below. The row names the package itself, so Node resolution
+# finds the installed code from the profile tree.
+#
+# The row deliberately carries no `config`: the plugin's own defaults apply, and
+# a profile that wants different values overrides this row in its own
+# cordis.patch.yml, which is applied after every bundle layer:
+#
+#   - id: mac-notify
+#     name: 'dsh-plugin-mac-notify'
+#     config:
+#       sound: Ping            # 'default' (system alert sound) | a system sound name | 'off'
+#       notifyOnApproval: false
+#       url: 'http://127.0.0.1:3080'
+#
+# Host-only bundle: `apply` subscribes to Host events and shells out to
+# `terminal-notifier` (clickable) or `osascript` (plain banner). There is no
+# browser half, so nothing renders in the page and no page refresh is involved.
+- insert:
+    - id: mac-notify
+      name: 'dsh-plugin-mac-notify'
