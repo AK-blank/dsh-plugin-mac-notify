@@ -203,6 +203,17 @@ requires the repository to be at least one day old, and the `dsh-plugin` topic
 (which this repo carries) is what makes `dsh-plugin-radar` pick it up in the
 meantime.
 
+`scripts/submit-catalog.mjs` does the same thing without a local clone: it syncs
+a fork of the list with upstream `main`, adds that one file on its own branch,
+and opens the pull request. It is idempotent (a second run reports the pull
+request it already opened), refuses to run before the repository's age floor
+(exit code 3), and never force-pushes or touches an existing pull request.
+
+```bash
+node scripts/submit-catalog.mjs --dry-run   # validate the entry, write nothing
+node scripts/submit-catalog.mjs             # fork, branch, commit, open the PR
+```
+
 ## License
 
 MIT

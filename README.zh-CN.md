@@ -177,6 +177,15 @@ Agent 事件带 scope carrier 分发，Cordis 只在
 `data/plugins/AK-blank__dsh-plugin-mac-notify.yml` 并开 PR——它的 CI 要求仓库创建满
 一天；在此之前，本仓库已带的 `dsh-plugin` topic 会让 `dsh-plugin-radar` 先自动索引到。
 
+`scripts/submit-catalog.mjs` 不用本地 clone 就能完成同样的事：把列表的 fork 与
+upstream `main` 同步、在独立分支上加那一个文件、开 PR。它幂等（第二次运行只报告
+已开的 PR）、在仓库未满年龄门槛时拒绝执行（退出码 3），且从不 force-push、不碰已有 PR。
+
+```bash
+node scripts/submit-catalog.mjs --dry-run   # 只校验条目，不写任何东西
+node scripts/submit-catalog.mjs             # fork、建分支、提交、开 PR
+```
+
 ## 许可
 
 MIT
