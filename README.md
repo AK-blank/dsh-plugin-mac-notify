@@ -190,6 +190,19 @@ This is not theoretical: an earlier build registered plain listeners and
 notified for the installing session only. `selftest.mjs` asserts the flag on
 every registration so it cannot regress.
 
+## Community catalog
+
+The ready-to-PR entry for
+[`awesome-dsh-plugin`](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
+(the source behind [awesome-dsh-plugin.com](https://awesome-dsh-plugin.com) and
+dsh-market) lives in
+[`contrib/AK-blank__dsh-plugin-mac-notify.yml`](contrib/AK-blank__dsh-plugin-mac-notify.yml).
+To submit it, fork the list, copy that file to
+`data/plugins/AK-blank__dsh-plugin-mac-notify.yml` and open a PR — the list's CI
+requires the repository to be at least one day old, and the `dsh-plugin` topic
+(which this repo carries) is what makes `dsh-plugin-radar` pick it up in the
+meantime.
+
 ## License
 
 MIT

@@ -167,6 +167,16 @@ Agent 事件带 scope carrier 分发，Cordis 只在
 这不是纸上推演：早先的版本用普通监听器注册，结果只对安装它的那个会话发通知。
 `selftest.mjs` 现在会对每一个注册断言这个标志，防止回归。
 
+## 社区目录
+
+[`awesome-dsh-plugin`](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
+（同时也是 [awesome-dsh-plugin.com](https://awesome-dsh-plugin.com) 与 dsh-market 的数据源）
+的收录条目已备好，在
+[`contrib/AK-blank__dsh-plugin-mac-notify.yml`](contrib/AK-blank__dsh-plugin-mac-notify.yml)。
+提交方式：fork 该列表，把这个文件复制成
+`data/plugins/AK-blank__dsh-plugin-mac-notify.yml` 并开 PR——它的 CI 要求仓库创建满
+一天；在此之前，本仓库已带的 `dsh-plugin` topic 会让 `dsh-plugin-radar` 先自动索引到。
+
 ## 许可
 
 MIT
